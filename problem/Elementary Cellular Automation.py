@@ -4,7 +4,7 @@ def splt(n): # split the number into basic elements i - 2**i
     while n!=0:
         i = 0
         while True:
-            if n<2**i:
+            if n<2**i: # optimization by starting from large number
                 break
             i=i+1
         rst=rst+[i-1]
