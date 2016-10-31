@@ -1,4 +1,4 @@
-def splt(n):
+def splt(n): # split the number into basic elements i - 2**i
     n=int(n)
     rst=[]
     while n!=0:
@@ -19,14 +19,10 @@ def convert(list): #return replacement solution
         for x in range(0,8):
             rst[basecase[x]]='.'
         return rst
-    # p=list[0]+1
     for i in range(0,8):  # l is a list of 1,0
         if i in list:   # TODO: combination
-            l[i]=1
-    for s in range(0,len(l)):
-        if l[s]==1:
             rst[basecase[s]]='x'
-        else:
+        else: 
             rst[basecase[s]] = '.'
     return rst
 
@@ -39,10 +35,9 @@ def cellular_automaton(string, n, gen):
         p = 0
         while p<l:
             q=string2[p:p+3]
-            if p<l-1:
+            if p<l-1:  # try: use % function to avoid if
                 for i in solution:
                     if i==q:
-                        #stingList[p+1] = solution[i]
                         string=string[0:p+1]+solution[i]+string[p+2:]
             else:
                 for i in solution:
@@ -82,5 +77,5 @@ def cellular_automaton(string, n, gen):
 # #>>> .x...xxx
 # print (cellular_automaton('...x....', 125, 9))
 # #>>> xxxx.x.x
-print (cellular_automaton('...x....', 125, 10001))
+# print (cellular_automaton('...x....', 125, 10))
 # # >>> ...xxxxx
