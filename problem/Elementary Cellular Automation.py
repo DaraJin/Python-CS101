@@ -2,9 +2,9 @@ def splt(n): # split the number into basic elements i - 2**i
     n=int(n)
     rst=[]
     while n!=0:
-        i = 0
+        i = 0 # optimization by starting from large number to 0
         while True:
-            if n<2**i: # optimization by starting from large number
+            if n<2**i: 
                 break
             i=i+1
         rst=rst+[i-1]
